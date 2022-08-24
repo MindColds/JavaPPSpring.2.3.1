@@ -21,24 +21,24 @@ public class UserController {
     }
 
     @GetMapping("/")
-    public String allUsers(Model model) {
+    public String showAllUsers(Model model) {
         model.addAttribute("user", userService.getAllUsers());
         return "userList";
     }
 
     @GetMapping("/create")
-    public String createUserForm(@ModelAttribute User user) {
+    public String createEmptyUserForm(@ModelAttribute User user) {
         return "/createUser";
     }
 
     @PostMapping("/createUser")
-    public String createUser(@ModelAttribute User user) {
+    public String createUserWithDetails(@ModelAttribute User user) {
         userService.createUser(user);
         return "redirect:/";
     }
 
     @GetMapping("/update/{id}")
-    public String editUser(@PathVariable int id, Model model) {
+    public String updateUserById(@PathVariable int id, Model model) {
         model.addAttribute("user", userService.getUser(id));
         return "/updateUser";
     }

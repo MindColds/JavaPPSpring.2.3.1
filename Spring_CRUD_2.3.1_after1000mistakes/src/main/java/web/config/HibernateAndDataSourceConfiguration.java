@@ -17,7 +17,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan(value = "web")
-public class AppConfig {
+public class HibernateAndDataSourceConfiguration {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean getEntityManager() {

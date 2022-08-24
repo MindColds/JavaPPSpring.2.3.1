@@ -92,7 +92,7 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && age == user.age && name.equals(user.name) && patronim.equals(user.patronim) &&
+        return name.equals(user.name) && patronim.equals(user.patronim) &&
                 surname.equals(user.surname) && email.equals(user.email);
     }
 
